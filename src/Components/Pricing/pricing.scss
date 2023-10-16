@@ -1,0 +1,140 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 235);
+
+    --light-color: #666;
+    --light-bg: #eaeaea;
+    --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: var(--blackColor);
+    text-transform: capitalize;
+}
+
+@mixin titleTextWhite($titleSize) {
+    font-size: $titleSize;
+    color: var(--whiteColor);
+    text-transform: capitalize;
+}
+
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: var(--light-color);
+    line-height: 1.5;
+}
+
+@mixin iconsBox() {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    background: var(--light-bg);
+    // color: var(--blackColor);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover{
+        background: var(--blackColor);
+        color: var(--whiteColor);
+    }
+}
+
+.pricing{
+    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background: var(--light-bg);
+
+    .heading {
+        margin-bottom: 2rem;
+        @include titleText(3rem);
+        padding-left: 1rem;
+        border-left: 1rem solid var(--PrimaryColor);
+        // padding-bottom: 3rem;
+    }
+
+    .box-container{
+        @include grid(17rem);
+        margin-left: 3rem;
+        margin-right: 3rem;
+        align-content: space-between;
+               
+        .box{
+            background: var(--whiteColor);
+            text-align: center;
+            padding: 1rem;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+
+            .icon{
+                font-size: 3rem;
+                // padding: 25px;
+                height: 7rem;
+                width: 7rem;
+                line-height: 7rem;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+                background: var(--PrimaryColor);
+                color: var(--whiteColor);
+            }
+
+            h3{
+                @include titleText(1.7rem);
+                font-weight: normal;
+                // padding: .5rem 0;
+            }
+
+            .price{
+                padding:.2rem 0;
+                font-size: 5rem;
+                @include titleText(5rem);
+ 
+                span{
+                    font-size: 2rem;
+                }
+            }
+
+            .list{
+                padding: .5rem 0;
+
+                p{
+                    padding: .5rem 0;
+                    @include graphText(1.4rem);
+                }
+            }
+
+            // .btn {
+            //     // margin-left: 1rem;
+            //     color: var(--whiteColor);
+            //     font-weight: 700;
+            //     margin-bottom: 2rem;
+            // }
+
+        }
+    }
+}
+

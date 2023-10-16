@@ -1,0 +1,88 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 235);
+  --light-color: #666;
+  --light-bg: #eaeaea;
+  --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.pricing {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background: var(--light-bg);
+}
+.pricing .heading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--blackColor);
+  text-transform: capitalize;
+  padding-left: 1rem;
+  border-left: 1rem solid var(--PrimaryColor);
+}
+.pricing .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  align-content: space-between;
+}
+.pricing .box-container .box {
+  background: var(--whiteColor);
+  text-align: center;
+  padding: 1rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+}
+.pricing .box-container .box .icon {
+  font-size: 3rem;
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background: var(--PrimaryColor);
+  color: var(--whiteColor);
+}
+.pricing .box-container .box h3 {
+  font-size: 1.7rem;
+  color: var(--blackColor);
+  text-transform: capitalize;
+  font-weight: normal;
+}
+.pricing .box-container .box .price {
+  padding: 0.2rem 0;
+  font-size: 5rem;
+  font-size: 5rem;
+  color: var(--blackColor);
+  text-transform: capitalize;
+}
+.pricing .box-container .box .price span {
+  font-size: 2rem;
+}
+.pricing .box-container .box .list {
+  padding: 0.5rem 0;
+}
+.pricing .box-container .box .list p {
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  line-height: 1.5;
+}/*# sourceMappingURL=pricing.css.map */

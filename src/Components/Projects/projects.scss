@@ -1,0 +1,139 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 235);
+
+    --light-color: #666;
+    --light-bg: #eaeaea;
+    --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: var(--blackColor);
+    text-transform: capitalize;
+}
+
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: var(--light-color);
+    line-height: 1.5;
+}
+
+@mixin iconsBox() {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    background: var(--light-bg);
+    // color: var(--blackColor);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover{
+        background: var(--blackColor);
+        color: var(--whiteColor);
+    }
+}
+
+.projects{
+    background: var(--blackColor);
+    // margin-top: 10rem;
+    margin-bottom: 2rem;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 67rem;
+    // height: max-content;
+
+    .heading{
+        color: var(--whiteColor);
+        margin-left: 3rem;
+        font-size: 50px;
+        padding-left: 1rem;
+        border-left: 1rem solid var(--PrimaryColor);
+        margin-bottom: 1rem;
+        // margin-top: 1rem;
+    }
+
+    .box-container{
+        @include grid(20rem);
+        height: 20rem;
+        margin-left: 3rem;
+        margin-right: 1rem;
+        
+        
+        // margin-bottom: 5rem;
+
+        .box{
+            cursor: initial;
+
+            &:hover .image img{
+                transform: scale(1.1);
+            }
+
+            .image{
+                height: 20rem;
+                overflow: hidden;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: .2s linear;
+                }
+            }
+
+            .content{
+                display: flex;
+                gap: .5rem;
+                background: var(--whiteColor);
+                justify-content: space-between;
+
+                    
+                .info{
+                    padding: 1rem 2rem;
+
+                    h3{
+                        @include titleText(1.7rem);
+                    }
+
+                    p{
+                        @include graphText(1.5rem);
+                    }
+                }
+
+                i{
+                    width: 6rem;
+                    font-size: 5rem;
+                    background: var(--PrimaryColor);
+                    color: var(--whiteColor);
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 5rem;
+                }
+            }
+
+        }
+    }
+}

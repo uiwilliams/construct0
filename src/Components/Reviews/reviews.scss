@@ -1,0 +1,121 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 235);
+
+    --light-color: #666;
+    --light-bg: #eaeaea;
+    --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: var(--blackColor);
+    text-transform: capitalize;
+}
+
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: var(--light-color);
+    line-height: 1.5;
+}
+
+@mixin iconsBox() {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    background: var(--light-bg);
+    // color: var(--blackColor);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover{
+        background: var(--blackColor);
+        color: var(--whiteColor);
+    }
+}
+
+.reviews{
+
+    margin-left: 3rem;
+    margin-right: 1rem;
+    margin-bottom: 5rem;
+
+    .heading {
+        margin-bottom: 2rem;
+        @include titleText(3rem);
+        padding-left: 1rem;
+        border-left: 1rem solid var(--PrimaryColor);
+        // padding-bottom: 3rem;
+    }
+
+    .slide{
+
+        p{
+            padding: .5rem;
+            background: var(--light-bg);
+            position: relative;
+            margin-bottom: 1rem;
+            @include graphText(.5rem);
+
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: -1rem; left: 2rem;
+                height: 1.5rem;
+                width: 1.5rem;
+                background: var(--light-bg);
+                transform: rotate(45deg); 
+            }
+        }
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img{
+                height: 7rem;
+                width: 7rem;
+                margin-bottom: 1rem;
+            }
+
+            h3{
+                @include graphText(2rem);
+            }
+
+            .stars{
+                padding-top: .3rem;
+                font-size: 1rem;
+                color: var(--PrimaryColor);
+
+                // i{
+                //     font-size: 1.5rem;
+                //     color: var(--PrimaryColor);
+                // }
+            }
+        }
+    }
+}

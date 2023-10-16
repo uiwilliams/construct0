@@ -1,0 +1,106 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 235);
+
+    --light-color: #666;
+    --light-bg: #eaeaea;
+    --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+}
+
+// *{
+//     box-sizing: border-box;
+//     text-decoration: none;
+//     transition: all .2s linear;
+// }
+
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: var(--blackColor);
+    text-transform: capitalize;
+}
+
+@mixin titleTextWhite($titleSize) {
+    font-size: $titleSize;
+    color: var(--whiteColor);
+    text-transform: capitalize;
+}
+
+.contact{
+    background: var(--blackColor);
+    margin-bottom: 2rem;
+    // height: 23px;
+    
+    // display: none;
+
+    // .formBoundary{
+    //     margin-bottom: 1rem;
+
+        .heading{
+            margin-bottom: 1rem;
+            @include titleText(2rem);
+            margin-left: 3rem;
+            font-size: 50px;
+            padding-left: 1rem;
+            border-left: 1rem solid var(--PrimaryColor);
+        }
+    
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background-color: var(--light-bg);
+            margin-bottom: .5rem;
+    
+            .map{
+                flex: .5 .5 20rem;
+                width: 70%;
+                border: none;
+                border-radius: 5px;
+                margin-left: 3rem;
+            }
+    
+            form{
+                flex: .5 .5 20rem;
+                background: var(--whiteColor);
+                padding: 2rem;
+    
+                h3{
+                    @include titleText(2rem);
+                }
+    
+                .box{
+                    margin: .5rem 0;
+                    width: 100%;
+                    padding: 1rem 0;
+                    background: var(--light-bg);
+                    font-size: 1.2rem;
+                    color: var(--light-color);
+                    border-bottom: var(--border);
+                    border: none;
+                    border-radius: 5px;
+    
+                    &:focus{
+                        border-color: var(--PrimaryColor);
+                        transform: translateY(-1rem);
+                    }
+                }
+    
+                textarea{
+                    height: 10rem;
+                    resize: none;
+                }
+            }
+        }
+    // }
+}

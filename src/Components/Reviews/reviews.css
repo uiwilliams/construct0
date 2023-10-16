@@ -1,0 +1,76 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 235);
+  --light-color: #666;
+  --light-bg: #eaeaea;
+  --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.reviews {
+  margin-left: 3rem;
+  margin-right: 1rem;
+  margin-bottom: 5rem;
+}
+.reviews .heading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--blackColor);
+  text-transform: capitalize;
+  padding-left: 1rem;
+  border-left: 1rem solid var(--PrimaryColor);
+}
+.reviews .slide p {
+  padding: 0.5rem;
+  background: var(--light-bg);
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 0.5rem;
+  color: var(--light-color);
+  line-height: 1.5;
+}
+.reviews .slide p::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: var(--light-bg);
+  transform: rotate(45deg);
+}
+.reviews .slide .user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reviews .slide .user img {
+  height: 7rem;
+  width: 7rem;
+  margin-bottom: 1rem;
+}
+.reviews .slide .user h3 {
+  font-size: 2rem;
+  color: var(--light-color);
+  line-height: 1.5;
+}
+.reviews .slide .user .stars {
+  padding-top: 0.3rem;
+  font-size: 1rem;
+  color: var(--PrimaryColor);
+}/*# sourceMappingURL=reviews.css.map */

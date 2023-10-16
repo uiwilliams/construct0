@@ -1,0 +1,139 @@
+:root{
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 240);
+    --cardBG: rgb(225, 225, 235);
+
+    --light-color: #666;
+    --light-bg: #eaeaea;
+    --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+    --border:.1rem solid rgba(0,0,0,.3);
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 2rem;
+}
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: var(--blackColor);
+    text-transform: capitalize;
+}
+
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: var(--light-color);
+    line-height: 1.5;
+}
+
+@mixin iconsBox() {
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    background: var(--light-bg);
+    // color: var(--blackColor);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover{
+        background: var(--blackColor);
+        color: var(--whiteColor);
+    }
+}
+
+.about{
+    margin-left: 3rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    .heading {
+        margin-bottom: 2rem;
+        @include titleText(3rem);
+        padding-left: 1rem;
+        border-left: 1rem solid var(--PrimaryColor);
+        // padding-bottom: 3rem;
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        .videoDiv{
+            flex: 1 1 25rem;
+            // margin-bottom: 1rem;
+
+            video{
+                width: 100%;
+            }
+        }
+
+        .content{
+            flex: 1 1 20rem;
+            // margin-bottom: 1rem;
+
+            h3{
+                @include titleText(2rem);
+                margin-bottom: 1rem;
+            }
+    
+            p{
+                @include graphText(1.2rem);
+                padding: 1rem 0;
+                // padding-right: 0.5rem;
+                // margin-bottom: 1rem;
+            }
+               
+            .btn{
+                margin-top: 1rem;
+                
+                a{
+                    font-weight: 400;
+                    font-size: medium;
+                    color: var(--whiteColor);
+                }
+            }
+        }  
+    }
+
+    .box-container{
+        margin-top: 3rem;
+        @include grid(16rem);
+        align-items: flex-end;
+
+        .box{
+            text-align: center;
+            background: var(--light-bg);
+            padding: 3rem 2rem;
+
+            h3{
+                @include titleText(2rem);
+                font-weight: 800;
+            }
+
+            p{
+                @include graphText(1rem);
+                padding-top: .5rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+

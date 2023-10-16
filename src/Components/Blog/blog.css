@@ -1,0 +1,28 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 235);
+  --light-color: #666;
+  --light-bg: #eaeaea;
+  --box-shadow: 0 .5rem 1reemm rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+}
+
+.blog {
+  background: var(--blackColor);
+  display: none;
+}
+.blog .heading {
+  color: var(--whiteColor);
+  margin-left: 3rem;
+  margin-right: 1rem;
+  margin-bottom: 5rem;
+}/*# sourceMappingURL=blog.css.map */
